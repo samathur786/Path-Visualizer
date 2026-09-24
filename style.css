@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(to bottom, rgba(173, 216, 230, 1), rgba(255, 255, 255, 1));
+    height: 100vh;
+
+
+/* Navbar Styles */
+.navbar {
+    height: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px; 
+    box-shadow: 0 5px 20px rgba(181, 181, 181, 0.2);
+    background: linear-gradient(to right, rgba(85, 85, 85, 1), rgba(50, 50, 50, 1));
+
+}
+
+.nav-h {
+    color: white;
+    font-size: 28px; /* Larger font size */
+    margin: 0;
+    letter-spacing: 1px; /* Slightly increase spacing between letters */
+}
+
+/* Dropdown button styles */
+.btn-speed, .btn-algo, .btn-maze {
+    background: none;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.btn-speed:hover, .btn-algo:hover, .btn-maze:hover {
+    background-color: rgba(41, 128, 185, 1); /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Dropdown content styles */
+.speeddropdownContent, .algodropdownContent, .mazaDropDowncontent {
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px; /* Rounded corners for dropdowns */
+}
+
+/* Dropdown link styles */
+.speed-link, .algo-link{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s; /* Smooth transition */
+}
+
+.speed-link:hover, .algo-link:hover{
+    background-color: #f1f1f1; /* Light grey on hover */
+}
+
+.text-style {
+    font-family: Arial, sans-serif; 
+    font-size: 20px; 
+    color: rgb(6, 122, 83);
+    font-weight: bold;
+    text-align: center;
+    background-color:transparent ;
+}
+.visualize{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Lato', sans-serif;
+    margin: 19px 40px;
+    width: 91%;
+}
+.table{
+    background:white;
+    border: 2px solid #000000;
+    border-radius: 5px;
+}
+.container{
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.algo-descr {
+    font-family: 'Lato', sans-serif; /* Use the same font as the rest of your design */
+    font-size: 20px; /* Font size for readability */
+    color: #2c3e50; /* Dark color for text */
+    background-color: white; /* Light background with transparency */
+    border-left: 5px solid #2980b9; /* Blue left border for emphasis */
+    padding: 15px; /* Padding for better spacing */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s, background-color 0.3s; 
+}
+.algo-desc{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.unv{   
+    border: 1px solid rgb(175, 216, 248);
+    border-bottom: none;
+    border-left: none;
+}
+#gridTable{
+    width: 97vw;
+    height: 20%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-sizing: content-box;
+}
+#gridTable td{
+    width: 25px;
+    height: 25px;
+}
+.wall{
+    background-color: #011527e1;
+    border-width: 1px;
+    animation-name: grow;
+    animation-duration: 0.2s;
+    /* box-shadow: 0px 0px 3px #011527e1; */
+    animation-timing-function: ease-out;
+}
+.start {
+    background-image: url("start.svg");
+    background-size: 20px;
+    border-top: 1px solid rgb(175, 216, 248);
+    border-right: 1px solid rgb(175, 216, 248);
+    background-repeat: no-repeat;
+    background-position: center;
+    animation-name: growSE;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in;
+}
+.current{
+    background-color: yellow;
+}
+.boxVisited{
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    width: 20px;
+    height: 25px;
+    margin: 3px 7px;
+    background-color: rgba(0, 190, 218, 0.75);
+    box-shadow: 0px 0px 4px 0px #787e7e;
+    float: right;
+}
+.box {
+    display: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    padding: 6px 0;
+    float:right;
+
+}
+.box p,.box i{
+    float: right;
+}
+#textP, #textV{
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    padding: 0 10px;
+    color: rgb(32, 31, 31);
+    margin: 0;
+    float: left;
+}
+
+#pathVisited{
+    background-color: yellow;
+}
+.shortestPath{
+    background-color:rgb(249, 249, 70);
+    border-width: 1px;
+    animation-name: grow;
+    animation-duration: 0.1s;
+    animation-timing-function: ease-out;
+}
+.end{
+    background-image: url("end.svg");
+    border-top: 1px solid rgb(175, 216, 248);
+    border-right: 1px solid rgb(175, 216, 248);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation-name: growSE;
+    animation-duration: .4s;
+    animation-timing-function: ease-in;
+}
+.visited{
+    border: 1px solid rgb(175, 216, 248);
+    animation-name: visitedAnimation;
+    animation-duration: 1.0s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+#pn,
+#pathVisited,
+#textP{
+    display: none;
+}
+#pathVisited{
+    background-color: yellow;
+}
+.popup{
+    font-size: large;
+    min-width: 319.59px;
+    width: 700px;
+    border: 3px solid rgb(150, 147, 147);
+    padding: 20px;
+    position: fixed;
+    background: white;
+    top: 25%;
+    left: 30%;
+    z-index: 1;
+    animation-name: growPopup;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-out;
+}
+.popup p{
+    width: 90%;
+    margin-top:10px;
+}
+.close:hover{
+    color: rgb(168, 22, 22);
+    cursor: pointer;
+}
+
+@keyframes visitedAnimation {
+        
+    0% {
+        transform: scale(0);
+        background-color: #1a3c3b;
+        border-radius: 100%;
+    }
+    50% {
+        background-color: #1d615f;
+    }
+    75% {
+        transform: scale(1.2);
+        background-color:#03f7ffde;
+    }
+    100% {
+        transform: scale(1);
+        background-color:rgba(0, 190, 218, 0.75);
+    }
+}
+
+
+.btn-visualize {
+    background-color: #27ae60; /* Green background */
+    color: white;
+    border: none;
+    padding: 12px 20px; /* Adjusted padding */
+    font-size: 18px; /* Slightly larger font size */
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.btn-visualize:hover {
+    background-color: #219653; /* Darker green on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Optional: Style for the algorithm name displayed in the button */
+#algoName {
+    font-weight: bold; /* Make algorithm name bold */
+}
+.reset-button {
+    background-color: transparent; /* Red background */
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Padding for better click area */
+    font-size: 16px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; 
+     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  */
+}
+
+.reset-button:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.reset-button:active {
+    transform: scale(0.95); /* Scale down when clicked */
+}
+
+/* Optional: Adding a small animation on load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reset-button {
+    animation: fadeIn 0.5s ease-in; /* Fade-in effect */
+}
