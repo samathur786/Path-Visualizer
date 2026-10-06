@@ -1,29 +1,85 @@
 # Path Finder
 
-Path Finder is a project that helps in visualizing certain graph algorithms like Dijkstra, BFS, etc. This visualization can aid in understanding how these algorithms work step by step.
+Path Finder is a lightweight browser-based visualization tool for exploring common pathfinding algorithms on a grid. It helps you understand how algorithms such as Dijkstra, BFS, DFS, Best First Search, and A* explore the graph and reconstruct the shortest path step by step.
 
-
-![homeAnimation1](https://github.com/just-ctrlC-ctrlV/Path-Visualizer/blob/main/homeAnimation1.gif)
-
+![Path Finder Demo](./homeAnimation1.gif)
 
 ## Features
 
-- Visualize Dijkstra's Algorithm, Breadth-First Search (BFS) and do more ...
-- Clear and reset the graph
-- Step-by-step visualization
+- Visualize multiple pathfinding algorithms:
+  - Depth First Search (DFS)
+  - Breadth First Search (BFS)
+  - Best First Search
+  - Dijkstra
+  - A*
+- Draw walls and obstacles directly on the grid
+- Drag and reposition the start and end nodes
+- Generate a random maze
+- Adjust visualization speed
+- Clear the whole grid or just the path/visited nodes
+- Step-by-step animation of visited nodes and the final shortest path
 
+## Tech Stack
 
-### Installation
+- HTML
+- CSS
+- JavaScript
 
-1. Clone the repository to your local machine:
+## Getting Started
 
-   ```sh
-   git clone https://github.com/just-ctrlC-ctrlV/Path-Visualizer.git
-   
-2. Navigate to the project directory:
+### 1. Clone the repository
 
-   ```sh
-   cd Path-Finder
+```bash
+git clone https://github.com/just-ctrlC-ctrlV/Path-Visualizer.git
+cd Path-Visualizer
+```
 
-3. Run the local server under index.html file:
+### 2. Run the project
+
+You can either open `index.html` directly in your browser or serve the project locally.
+
+Option A: Open directly
+
+```bash
+open index.html
+```
+
+Option B: Use a local server
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open:
+
+```text
+http://localhost:8000
+```
+
+## How to Use
+
+1. Click and drag on the grid to create walls.
+2. Drag the start and end nodes to change their positions.
+3. Select an algorithm from the dropdown.
+4. Choose a speed for the animation.
+5. Click `Visualize` to see how the algorithm explores the grid.
+6. Use `Clear Grid` or `Clear Path and Visited Nodes` to reset the board.
+
+## Project Structure
+
+```text
+Path-Visualizer/
+├── index.html
+├── style.css
+├── scriptBasics.js
+├── homeAnimation1.gif
+├── start.svg
+├── end.svg
+├── icnon.png
+├── README.md
+```
+
+## License
+
+This project is available for educational and personal use.
 
