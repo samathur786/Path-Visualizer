@@ -6,7 +6,7 @@ body{
     background: linear-gradient(to bottom, rgba(173, 216, 230, 1), rgba(255, 255, 255, 1));
     height: 100vh;
 
-
+}
 /* Navbar Styles */
 .navbar {
     height: 10%;
@@ -141,7 +141,7 @@ body{
     animation-timing-function: ease-out;
 }
 .start {
-    background-image: url("start.svg");
+    background-image: url("../start.svg");
     background-size: 20px;
     border-top: 1px solid rgb(175, 216, 248);
     border-right: 1px solid rgb(175, 216, 248);
@@ -195,7 +195,7 @@ body{
     animation-timing-function: ease-out;
 }
 .end{
-    background-image: url("end.svg");
+    background-image: url("../end.svg");
     border-top: 1px solid rgb(175, 216, 248);
     border-right: 1px solid rgb(175, 216, 248);
     background-size: 20px;
