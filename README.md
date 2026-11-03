@@ -2,6 +2,8 @@
 
 Path Finder is a lightweight browser-based visualization tool for exploring common pathfinding algorithms on a grid. It helps you understand how algorithms such as Dijkstra, BFS, DFS, Best First Search, and A* explore the graph and reconstruct the shortest path step by step.
 
+**GitHub Repository:** [Path Visualizer](https://github.com/samathur786/Path-Visualizer)
+
 ![Path Finder Demo](./homeAnimation1.gif)
 
 ## Features
@@ -25,12 +27,35 @@ Path Finder is a lightweight browser-based visualization tool for exploring comm
 - CSS
 - JavaScript
 
+## Code Architecture
+
+The project follows a modular JavaScript structure to keep the code
+organized, maintainable, and easy to understand.
+
+- **algorithms/**: Contains pathfinding algorithm implementations
+  such as BFS, DFS, Dijkstra, A*, and Best First Search.
+- **appState.js**: Manages global application variables and DOM references.
+- **grid.js**: Handles grid creation.
+- **gridEvents.js**: Handles grid mouse events such as dragging and selection.
+- **gridInteractions.js**: Handles wall creation.
+- **gridReset.js**: Handles clearing the grid and path.
+- **helpers.js**: Contains reusable helper functions.
+- **initialization.js**: Initializes the grid and application.
+- **maze.js**: Handles random maze generation.
+- **animation.js**: Handles visualization animations.
+- **node.js**: Defines the node structure used in the grid and pathfinding algorithms.
+- **priorityQueue.js**: Implements the priority queue used by priority-based algorithms.
+- **uiControls.js**: Handles algorithm, maze, and speed controls.
+- **utils.js**: Contains utility functions.
+- **visualization.js**: Controls algorithm visualization.
+
+
 ## Getting Started
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/just-ctrlC-ctrlV/Path-Visualizer.git
+git clone https://github.com/samathur786/Path-Visualizer.git
 cd Path-Visualizer
 ```
 
@@ -38,11 +63,9 @@ cd Path-Visualizer
 
 You can either open `index.html` directly in your browser or serve the project locally.
 
-Option A: Open directly
+**Option A: Open directly**
 
-```bash
-open index.html
-```
+Double-click `index.html` to open the project in your browser.
 
 Option B: Use a local server
 
@@ -55,7 +78,6 @@ Then open:
 ```text
 http://localhost:8000
 ```
-
 ## How to Use
 
 1. Click and drag on the grid to create walls.
@@ -69,14 +91,40 @@ http://localhost:8000
 
 ```text
 Path-Visualizer/
+│
 ├── index.html
-├── style.css
-├── scriptBasics.js
-├── homeAnimation1.gif
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   ├── algorithms/
+│   │   ├── astar.js
+│   │   ├── bestFirstSearch.js
+│   │   ├── bfs.js
+│   │   ├── dfs.js
+│   │   └── dijkstra.js
+│   │
+│   ├── animation.js
+│   ├── appState.js
+│   ├── grid.js
+│   ├── gridEvents.js
+│   ├── gridInteractions.js
+│   ├── gridReset.js
+│   ├── helpers.js
+│   ├── initialization.js
+│   ├── maze.js
+│   ├── node.js
+│   ├── priorityQueue.js
+│   ├── uiControls.js
+│   ├── utils.js
+│   └── visualization.js
+│
 ├── start.svg
 ├── end.svg
-├── icnon.png
-├── README.md
+├── homeAnimation1.gif
+├── icon.png
+└── README.md
 ```
 
 ## License
